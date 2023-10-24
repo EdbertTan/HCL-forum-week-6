@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Control Panel</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+
+	* {
+	box-sizing: border-box;
+	}
+
+	.left {
+		background-color: rgb(240, 231, 225);
+		padding: 20px;
+		float: left;
+		width: 33%; /* The width is 20%, by default */
+
+		clear:left;
+		display:block;
+		height:400px;
+		min-height:400px;
+
+	}
+
+	.main {
+		background-color: rgb(240, 231, 225);
+		padding: 20px;
+		float: left;
+		width: 33%; /* The width is 60%, by default */
+		
+		display:block;
+		height:400px;
+		min-height:400px;
+		
+	}
+
+	.right {
+		background-color: rgb(240, 231, 225);
+		padding: 20px;
+		float: left;
+		width: 33%; /* The width is 20%, by default */
+		
+		display:block;
+		height:400px;
+		min-height:400px;
+		
+	}
+
+	.color1 {
+		background-color: rgb(126, 239, 247);
+	}
+	
+	.color2 {
+		background-color: rgb(99, 188, 194);
+	}
+	
+	.color3 {
+		background-color: rgb(80, 142, 163);
+	}
+
+	/* Use a media query to add a break point at 800px: */
+	@media screen and (max-width: 800px) {
+		.left, .main, .right {
+			width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+		}
+	}
+	
+	
+	.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	}
+
+	.switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+	}
+
+	.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+	}
+
+	.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+	}
+
+	input:checked + .slider {
+	background-color: #2196F3;
+	}
+
+	input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+	}
+
+	input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+	}
+
+	/* Rounded sliders */
+	.slider.round {
+	border-radius: 34px;
+	}
+
+	.slider.round:before {
+	border-radius: 50%;
+	}
+
+
+	/* Use a media query to add a break point at 800px: */
+	@media screen and (max-width: 800px) {
+		.left, .main, .right {
+			width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+		}
+	}
+	
+	@media screen and (max-width: 600px) {
+		.left2, .main2, .right2 {
+			width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+		}
+	}
+	
+	@media screen and (max-width: 768px) {
+		.left3, .main3, .right3 {
+			width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+		}
+	}
+	</style>
+</head>
+	
+
+<body style="font-family:Verdana;rgb(240, 231, 225);background-color: rgb(43, 197, 240);">
+
+<!-- Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm
+-->
+
+
+	<p style="clear:left";><center><h2 style="margin-top:10px;">Smart Home Control Panel</h2></center></p>
+
+
+	<div class="left left2 left3 color1" style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p><img src="air conditioner.png" style="max-width:100%;height:auto;display:block;"/>
+			<h2>Air Conditioning</h2>
+			adjust the room temperature, fan speed and mode freely
+		</p>
+	</div>
+
+	<div class="main main2 main3 color1" style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p>
+			<h2>Temperature Settings</h2>
+			<form action="/action_page.php">
+				<label for="temp">room temperature:</label>
+				<input type="text" id="temp" name="temp">
+			</form>
+		</p>
+	</div>
+
+	<div class="right right2 right3 color1" style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p>
+			<h2>fan speed and Mode</h2>
+			<form action="/action_page.php">
+				<label for="speed">fan speed:</label>
+				<input type="text" id="speed" name="speed">
+				<p>mode:</p>
+				<input type="radio" id="mode1" name="mode" value="auto">
+				<label for="mode1">auto</label><br>
+				<input type="radio" id="mode2" name="mode" value="cool">
+				<label for="mode2">cool</label><br>  
+				<input type="radio" id="mode3" name="mode" value="dry">
+				<label for="mode3">dry</label><br><br>
+			</form>
+		</p>
+	</div>
+
+	<div class="left left2 left3 color2"  style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p><img src="cctv.png" style="max-width:33%;height:33%;display:block;"/>
+			<h2>Cameras</h2>
+			turn on and off any linked cameras by checking the corresponding box and look at whichever camera you want<br><br></td></tr>
+		</p>
+	</div>
+
+	<div class="main main2 main3 color2"  style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p>
+			<h2>linked cameras</h2>
+			<form action="/action_page.php">
+			<input type="checkbox" id="camera1" name="camera" value="livingroom" checked>
+			<label for="camera1"> camera 1 (living room)</label><br>
+			<input type="checkbox" id="camera2" name="camera2" value="kitchen">
+			<label for="camera2"> camera 2 (kitchen)</label><br>
+			<input type="checkbox" id="camera3" name="camera3" value="frontentrance">
+			<label for="camera3"> camera 3 (front entrance)</label><br><br>
+			</form>
+			<br><br></td></tr>
+		</p>
+	</div>
+
+	<div class="right right2 right3 color2"  style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p>
+			<h2>camera display</h2>
+			current display:living room
+			<img src="livingroom.jpeg" style="max-width:100%;height:auto;display:block;"/>
+			<br><br></td></tr>
+		</p>
+	</div>
+
+	<div class="left left2 left3 color3"  style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p><img src="securitymonitoring.png" style="max-width:40%;height:40%;display:block;"/>
+		
+			<h2>Security</h2>
+			local alarm systems can be monitored via cellular devices<br><br></td></tr>
+		</p>
+	</div>
+
+	<div class="main main2 main3 color3"  style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p><img src="smartsecurity.png" style="max-width:80%;height:80%;display:block;"/>
+			<h2>Sensors Around the House<h2>
+			<br><br></td></tr>
+		</p>
+	</div>
+
+	<div class="right right2 right3 color3"  style="border-width:3px; border-style:solid; border-color:#736d6d; padding: 1em;">
+		<p>
+			<h2>Emergency Alarm Button</h2>
+			only use when in danger
+			<br><br>
+			<label class="switch">
+			<input type="checkbox">
+			<span class="slider round"></span>
+			</label>
+			<br><br></td></tr>
+		</p>
+	</div>
+
+
+</body>
+
+</html>
